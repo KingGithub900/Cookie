@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            width: 100%;
+            text-align: center;
+        }
+        #cookie_true {
+            color: green;
+        }
+        #cookie_false {
+            color: rgb(218, 218, 218);
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        function cookie() {
+            document.cookie = "AccessibilityAddData=true";
+            return document.cookie.indexOf("AccessibilityAddData=") != -1;
+        }
+        if(cookie()) {
+            let h2 = document.createElement("h2");
+            h2.textContent = " تم انشاء ملفات تعريف الارتباط بنجاح ";
+            h2.id = "cookie_true";
+            document.body.append(h2);
+        } else {
+            let h2 = document.createElement("h2");
+            h2.textContent = " حدث خطاء ";
+            h2.id = "cookie_false";
+            document.body.append(h2);
+        }
+    </script>
+</body>
+</html>
